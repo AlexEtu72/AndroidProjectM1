@@ -8,7 +8,7 @@
 
     <TableRow
         android:id="@+id/tableRow"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="66dp"
         android:background="#673AB7"
         android:backgroundTint="#673AB7"
@@ -81,5 +81,13 @@
             android:textSize="12sp" />
 
     </TableRow>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listOfLists"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:layout_editor_absoluteX="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
