@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TP1</string>
+    <string name="app_name" translatable="false">Pantrymind</string>
     <string name="lists">Lists</string>
     <string name="inventory">Stock</string>
     <string name="scan">Scan</string>
