@@ -6,4 +6,5 @@
     <string name="scan">Scan</string>
     <string name="reminder">Alerte</string>
     <string name="me">Moi</string>
+    <string name="button_to_add_a_new_list">bouton pour ajouter une nouvelle liste</string>
 </resources>

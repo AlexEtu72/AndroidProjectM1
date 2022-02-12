@@ -19,7 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_24"
         app:fabCustomSize="60dp"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/button_to_add_a_new_list" />
 
     <ListView
         android:id="@+id/listOfLists"

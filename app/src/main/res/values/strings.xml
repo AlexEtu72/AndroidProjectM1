@@ -5,4 +5,5 @@
     <string name="scan">Scan</string>
     <string name="me">Me</string>
     <string name="reminder">Alert</string>
+    <string name="button_to_add_a_new_list">button to add a new list</string>
 </resources>

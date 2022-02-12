@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pantrymind</string>
+    <string name="lists">القوائم</string>
+    <string name="inventory">المخزون</string>
+    <string name="scan">مسح</string>
+    <string name="me">أنا</string>
+    <string name="reminder">تذكير</string>
+    <string name="button_to_add_a_new_list">"زر لإضافة قائمة جديدة "</string>
+</resources>
