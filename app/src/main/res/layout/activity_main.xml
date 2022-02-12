@@ -76,7 +76,7 @@
             android:backgroundTint="#673AB7"
             android:drawableTop="@drawable/ic_baseline_account_box_24"
             android:drawableTint="#FFFFFF"
-            android:text="@string/profil"
+            android:text="@string/me"
             android:textColor="#FFFFFF"
             android:textSize="12sp" />
 

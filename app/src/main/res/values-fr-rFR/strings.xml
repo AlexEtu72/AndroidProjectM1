@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="lists">Liste</string>
+    <string name="inventory">Stock</string>
+    <string name="scan">Scan</string>
+    <string name="reminder">Alerte</string>
+    <string name="me">Moi</string>
+</resources>

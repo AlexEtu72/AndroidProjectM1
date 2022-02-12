@@ -3,6 +3,6 @@
     <string name="lists">Lists</string>
     <string name="inventory">Stock</string>
     <string name="scan">Scan</string>
-    <string name="profil">Profil</string>
+    <string name="me">Me</string>
     <string name="reminder">Alert</string>
 </resources>
