@@ -1,7 +1,7 @@
 // "stolen" here https://stackoverflow.com/questions/43584529/swipe-left-right-changes-activity
 
 
-package com.example.tp1;
+package com.example.pantrymind;
 
 import android.content.Context;
 import android.view.GestureDetector;

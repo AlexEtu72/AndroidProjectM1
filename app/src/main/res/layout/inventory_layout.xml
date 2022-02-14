@@ -16,6 +16,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="108dp" />
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="66dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp" >
+    </androidx.viewpager2.widget.ViewPager2>
+
 
     <TableRow
 
@@ -93,5 +102,6 @@
             android:textSize="12sp" />
 
     </TableRow>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

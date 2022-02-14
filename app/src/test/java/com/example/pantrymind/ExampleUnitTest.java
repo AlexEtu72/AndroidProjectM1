@@ -1,4 +1,4 @@
-package com.example.tp1;
+package com.example.pantrymind;
 
 import org.junit.Test;
 
