@@ -1,4 +1,4 @@
-package model;
+package com.example.pantrymind.model.entity;
 
 import java.time.LocalDate;
 
