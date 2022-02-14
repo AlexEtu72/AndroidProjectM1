@@ -6,30 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addListButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#673AB7"
-        android:clickable="true"
-        app:backgroundTint="#673AB7"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_add_24"
-        app:fabCustomSize="60dp"
-        app:tint="@color/white"
-        android:contentDescription="@string/button_to_add_a_new_list" />
-
-    <ListView
-        android:id="@+id/listOfLists"
+    <TextView
+        android:id="@+id/myHouse"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/my_house"
+        android:textColor="#888888"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="108dp" />
 
-        />
 
     <TableRow
+
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="66dp"
