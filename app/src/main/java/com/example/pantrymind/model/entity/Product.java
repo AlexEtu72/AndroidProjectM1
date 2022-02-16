@@ -4,34 +4,42 @@ import java.time.LocalDate;
 
 public abstract class Product {
 
-    private long ID;
-    private String Name;
+    private int id;
+    private String name;
     private int quantity;
-    private LocalDate expiration;
-    private alertState state;
-    private String Room;
+
+    private String room;
 
 
-    enum alertState {
-        GREEN,
-        YELLOW,
-        RED;
+
+
+    public Product(String name,int quantity,int refill){
+        this.setId(132154);  //TODO : ADD RNG
+        this.setName(name);
+        this.setQuantity(quantity);
+
+        //this.setExpiration(LocalDate.now().plusDays((long)refill));
+        //updateState();
+
     }
 
-    public long getID() {
-        return ID;
+
+
+
+    public int getId() {
+        return id;
     }
 
-    public void setID(long ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
 
@@ -43,28 +51,16 @@ public abstract class Product {
         this.quantity = quantity;
     }
 
-    public LocalDate getExpiration() {
-        return expiration;
-    }
 
-    public void setExpiration(LocalDate expiration) {
-        this.expiration = expiration;
-    }
 
-    public alertState getState() {
-        return state;
-    }
 
-    public void setState(alertState state) {
-        this.state = state;
-    }
 
     public String getRoom() {
-        return Room;
+        return room;
     }
 
     public void setRoom(String Room) {
-        this.Room = Room;
+        this.room = Room;
     }
 
 

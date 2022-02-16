@@ -1,46 +1,31 @@
 package com.example.pantrymind.model.entity;
 
 
+import androidx.room.*;
 import java.time.LocalDate;
 
-
+@Entity
 public class Food extends Product{
 
+    @PrimaryKey
+    private int id;
 
-    public Food(String name,int quantity,int refill) {
-        this.setID(132154L);  //TODO : ADD RNG
+    private int calories;
+
+
+    public Food(String name,int quantity,int refill,int calories) {
+        super(name,quantity,refill);
+
         this.setRoom("Kitchen");
-
-        this.setName(name);
-        this.setQuantity(quantity);
-        this.setExpiration(LocalDate.now().plusDays((long)refill));
-        updateState();
-
+        this.setCalories(calories);
     }
 
 
-    public void updateExpiration(int days){
-        this.setExpiration(LocalDate.now().plusDays((long)days));
+    public int getCalories() {
+        return calories;
     }
 
-
-
-    public void updateState(){
-        if(LocalDate.now().isBefore(this.getExpiration().minusDays(7))){
-            this.setState(alertState.GREEN);
-        }
-        if(LocalDate.now().isAfter(this.getExpiration().minusDays(7))){
-            this.setState(alertState.YELLOW);
-        }
-        if(LocalDate.now().isBefore(this.getExpiration().minusDays(2))){
-            this.setState(alertState.RED);
-        }
-        //TODO : Add product to ShoppingList
-
+    public void setCalories(int calories){
+        this.calories=calories;
     }
-
-
-
-
-
 }
