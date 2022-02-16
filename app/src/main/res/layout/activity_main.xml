@@ -9,103 +9,61 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addListButton"
         android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#673AB7"
+        android:layout_height="70dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/purple_main"
         android:clickable="true"
+        android:contentDescription="@string/button_to_add_a_new_list"
         app:backgroundTint="#673AB7"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:fabCustomSize="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPagerMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_24"
-        app:fabCustomSize="60dp"
-        app:tint="@color/white"
-        android:contentDescription="@string/button_to_add_a_new_list" />
+        app:tint="@color/white" />
 
-    <ListView
-        android:id="@+id/listOfLists"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="66dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="66dp"/>
 
-    <TableRow
-
-        android:id="@+id/bottomBar"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="66dp"
-        android:background="#673AB7"
-        android:backgroundTint="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="1dp">
 
-        <Button
-            android:id="@+id/buttonLists"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#673AB7"
-            android:drawableTop="@drawable/list_icon"
-            android:drawableTint="#FFFFFF"
-            android:text="@string/lists"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:icon="@drawable/list_icon"
+            android:text="Lists" />
 
-        <Button
-            android:id="@+id/buttonStock"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#673AB7"
-            android:drawableTop="@drawable/ic_baseline_shopping_bag_24"
-            android:drawableTint="#FFFFFF"
-            android:text="@string/inventory"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:icon="@drawable/ic_baseline_shopping_bag_24"
+            android:text="Stock" />
 
-        <Button
-            android:id="@+id/buttonScan"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#673AB7"
-            android:drawableTop="@drawable/ic_baseline_center_focus_strong_24"
-            android:drawableTint="#FFFFFF"
-            android:text="@string/scan"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:icon="@drawable/ic_baseline_center_focus_strong_24"
+            android:text="Scan" />
 
-        <Button
-            android:id="@+id/buttonAlert"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#673AB7"
-            android:drawableTop="@drawable/ic_baseline_notifications_24"
-            android:drawableTint="#FFFFFF"
-            android:text="@string/reminder"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:icon="@drawable/ic_baseline_notifications_24"
+            android:text="Alert" />
 
-        <Button
-            android:id="@+id/buttonProfil"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#673AB7"
-            android:drawableTop="@drawable/ic_baseline_account_box_24"
-            android:drawableTint="#FFFFFF"
-            android:text="@string/me"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
-
-    </TableRow>
+            android:icon="@drawable/ic_baseline_account_box_24"
+            android:text="Profile" />
+    </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

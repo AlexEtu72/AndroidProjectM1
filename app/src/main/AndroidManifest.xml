@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.example.pantrymind.Inventory"
-            android:exported="true">
-        </activity>
-
     </application>
 
 </manifest>

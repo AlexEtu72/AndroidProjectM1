@@ -1,41 +1,40 @@
 package com.example.pantrymind;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.view.View.OnClickListener;
+
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    float x1,x2,y1,y2;
+    ViewPager2 viewPager2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viewPager2 = findViewById(R.id.viewPagerMain);
 
-        Button yourButton = (Button) findViewById((R.id.buttonStock));
+        setViewPagerAdapter();
 
-        yourButton.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, Inventory.class));
-            }
-        });
-
-        ListView listOfLists = (ListView) findViewById(R.id.listOfLists);
-
-        listOfLists.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
-            public void onSwipeLeft() {
-                startActivity(new Intent(MainActivity.this, Inventory.class));
-            }
-
-        });
     }
+
+    public void setViewPagerAdapter() {
+        ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this);
+        ArrayList<Fragment> fragmentList = new ArrayList<>(); //creates an ArrayList of Fragments
+        fragmentList.add(new ListsFragment());
+        fragmentList.add(new StockFragment());
+        fragmentList.add(new ScanFragment());
+        fragmentList.add(new AlertFragment());
+        fragmentList.add(new ProfilFragment());
+
+        viewPager2Adapter.setData(fragmentList); //sets the data for the adapter
+        viewPager2.setAdapter(viewPager2Adapter);
+    };
 
 
 }
