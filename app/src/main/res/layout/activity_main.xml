@@ -14,6 +14,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutMain"
+        app:tabBackground="@color/purple_main"
+        app:tabIconTint="@color/white"
+        app:tabTextColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
