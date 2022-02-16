@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name" translatable="false">Pantrymind</string>
-    <string name="lists">Lists</string>
     <string name="inventory">Stock</string>
-    <string name="scan">Scan</string>
     <string name="me">Me</string>
     <string name="reminder">Alert</string>
     <string name="button_to_add_a_new_list">button to add a new list</string>
-    <string name="my_house">My house</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stock">Stock</string>
+    <string name="lists">Lists</string>
+    <string name="scan">Scan</string>
+    <string name="alert">Alert</string>
+    <string name="profile">Profile</string>
 </resources>
