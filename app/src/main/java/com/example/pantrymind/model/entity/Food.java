@@ -13,10 +13,10 @@ public class Food extends Product{
     private int calories;
 
 
-    public Food(String name,int quantity,int refill,int calories) {
-        super(name,quantity,refill);
+    public Food(String name,int quantity,int calories) {
+        super(name,quantity);
 
-        this.setRoom("Kitchen");
+        this.setRoom(Room.KITCHEN);
         this.setCalories(calories);
     }
 

@@ -16,7 +16,6 @@ public class Articles_Barcodes {
 
 
 
-
     public String getBarcode() {
         return barcode;
     }

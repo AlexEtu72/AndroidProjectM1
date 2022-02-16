@@ -8,16 +8,22 @@ public abstract class Product {
     private String name;
     private int quantity;
 
-    private String room;
+    private Room room;
+
+
+    public enum Room{
+        KITCHEN,
+        BATHROOM,
+        OTHER
+    }
 
 
 
 
-    public Product(String name,int quantity,int refill){
+    public Product(String name,int quantity){
         this.setId(132154);  //TODO : ADD RNG
         this.setName(name);
         this.setQuantity(quantity);
-
         //this.setExpiration(LocalDate.now().plusDays((long)refill));
         //updateState();
 
@@ -55,11 +61,11 @@ public abstract class Product {
 
 
 
-    public String getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setRoom(String Room) {
+    public void setRoom(Room Room) {
         this.room = Room;
     }
 

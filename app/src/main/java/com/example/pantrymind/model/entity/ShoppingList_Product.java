@@ -9,7 +9,7 @@ import androidx.room.ForeignKey;
         childColumns = "sLId"
 ),
         @ForeignKey(
-                entity = Product.class,
+                entity = Food.class,
                 parentColumns = "id",
                 childColumns = "pId"
         )},
@@ -19,24 +19,23 @@ public class ShoppingList_Product {
     private int sLId;
     private int pId;
 
-    public ShoppingList_Product(ShoppingList sLId, Product pId) {
-        this.sLId = sLId.getId();
-        this.pId = pId.getId();
+    public ShoppingList_Product() {
+
     }
 
-    public int getsLId() {
+    public int getSLId() {
         return sLId;
     }
 
-    public void setsLId(int sLId) {
+    public void setSLId(int sLId) {
         this.sLId = sLId;
     }
 
-    public int getpId() {
+    public int getPId() {
         return pId;
     }
 
-    public void setpId(int pId) {
+    public void setPId(int pId) {
         this.pId = pId;
     }
 }
