@@ -23,6 +23,11 @@ public class ShoppingList_Product {
 
     }
 
+    public ShoppingList_Product(ShoppingList s,Product p) {
+        this.pId=p.getId();
+        this.sLId=s.getId();
+    }
+
     public int getSLId() {
         return sLId;
     }
