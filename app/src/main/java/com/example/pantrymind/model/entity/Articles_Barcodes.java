@@ -14,6 +14,10 @@ public class Articles_Barcodes {
     private String barcode;
     private String pId;
 
+    public Articles_Barcodes(){
+        
+    }
+
 
 
     public String getBarcode() {

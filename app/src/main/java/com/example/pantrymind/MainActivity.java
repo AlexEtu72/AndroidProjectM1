@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
     public AppDatabase initDB(){
         return Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "DB").allowMainThreadQueries()
-                .createFromAsset("aa.db")
                 .build();
     }
 
