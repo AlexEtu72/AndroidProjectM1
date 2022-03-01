@@ -32,9 +32,18 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
         viewPager2 = findViewById(R.id.viewPagerMain);
         tabLayout = findViewById(R.id.tabLayoutMain);
         AppDatabase db = initDB();
+        Log.i("DB LOADED","done");
         FoodDAO f = db.foodDao();
         ArrayList<Food> foods = (ArrayList<Food>) f.getAll();
+        try {
         Log.i("test",foods.get(0).getName());
+        }
+        catch (Exception e){
+            Log.i("failed","loading failed");
+            if ( foods.isEmpty() ){
+                Log.i("failed","empty");
+            }
+        }
 
 
         setViewPagerAdapter();
@@ -55,11 +64,12 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
 
         viewPager2Adapter.setData(fragmentList); //sets the data for the adapter
         viewPager2.setAdapter(viewPager2Adapter);
-    };
+    }
 
     public AppDatabase initDB(){
         return Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "DB").allowMainThreadQueries()
+                AppDatabase.class, "Data").allowMainThreadQueries()
+                .createFromAsset("databases/aa.db")
                 .build();
     }
 

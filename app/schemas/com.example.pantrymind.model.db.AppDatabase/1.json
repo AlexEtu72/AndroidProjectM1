@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "fd6b81153d8684a15f5c3069cef19e63",
+    "identityHash": "cf3139fbd2f2fa80ce781b3e91425f04",
     "entities": [
       {
         "tableName": "Food",
@@ -79,6 +79,45 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "Articles_Barcodes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`barcode` TEXT NOT NULL, `pId` TEXT NOT NULL, PRIMARY KEY(`pId`, `barcode`), FOREIGN KEY(`pId`) REFERENCES `Food`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "barcode",
+            "columnName": "barcode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pId",
+            "columnName": "pId",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pId",
+            "barcode"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Food",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
       },
       {
         "tableName": "ShoppingList",
@@ -210,7 +249,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fd6b81153d8684a15f5c3069cef19e63')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cf3139fbd2f2fa80ce781b3e91425f04')"
     ]
   }
 }

@@ -1,21 +1,25 @@
 package com.example.pantrymind.model.entity;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.*;
 
 @Entity(foreignKeys={ @ForeignKey(
-        entity = Product.class,
+        entity = Food.class,
         parentColumns = "id",
         childColumns = "pId"
 )},
         primaryKeys = {"pId", "barcode"})
+
 public class Articles_Barcodes {
 
+    @NonNull
     private String barcode;
+    @NonNull
     private String pId;
 
     public Articles_Barcodes(){
-        
+
     }
 
 
@@ -28,11 +32,11 @@ public class Articles_Barcodes {
         this.barcode = barcode;
     }
 
-    public String getpId() {
+    public String getPId() {
         return pId;
     }
 
-    public void setpId(String pId) {
+    public void setPId(String pId) {
         this.pId = pId;
     }
 }

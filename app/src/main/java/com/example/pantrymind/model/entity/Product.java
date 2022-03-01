@@ -18,6 +18,9 @@ public abstract class Product {
     }
 
 
+    public Product(){
+
+    }
 
 
     public Product(String name,int quantity){

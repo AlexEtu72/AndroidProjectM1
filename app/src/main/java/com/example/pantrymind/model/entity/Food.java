@@ -12,6 +12,10 @@ public class Food extends Product{
 
     private int calories;
 
+    public Food(){
+        super();
+    }
+
 
     public Food(String name,int quantity,int calories) {
         super(name,quantity);
