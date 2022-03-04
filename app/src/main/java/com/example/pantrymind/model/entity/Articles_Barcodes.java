@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.room.*;
 
 @Entity(foreignKeys={ @ForeignKey(
-        entity = Food.class,
+        entity = Articles.class,
         parentColumns = "id",
         childColumns = "pId"
 )},
