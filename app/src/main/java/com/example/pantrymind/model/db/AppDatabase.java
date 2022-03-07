@@ -1,6 +1,7 @@
 package com.example.pantrymind.model.db;
 
 import androidx.room.*;
+import android.content.Context;
 
 import com.example.pantrymind.model.DAO.ArticlesDAO;
 import com.example.pantrymind.model.DAO.Articles_BarcodesDAO;
@@ -29,5 +30,19 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ShoppingListDAO shoppingListDAO();
     public abstract ShoppingList_ProductDAO shoppingList_productDAODAO();
     public abstract ReminderDAO reminderDAO();
+
+    private static AppDatabase INSTANCE;
+
+    public static AppDatabase getDbInstance(Context context) {
+
+        if(INSTANCE == null) {
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "Data")
+                    .allowMainThreadQueries()
+                    .createFromAsset("databases/aa.db")
+                    .build();
+
+        }
+        return INSTANCE;
+    }
 
 }

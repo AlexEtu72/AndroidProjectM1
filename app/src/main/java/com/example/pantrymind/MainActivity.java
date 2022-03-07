@@ -28,22 +28,15 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //DB INIT
+        AppDatabase db = AppDatabase.getDbInstance(getApplicationContext());
+        Log.i("DB LOADED","done");
+
         setContentView(R.layout.activity_main);
         viewPager2 = findViewById(R.id.viewPagerMain);
         tabLayout = findViewById(R.id.tabLayoutMain);
-        AppDatabase db = initDB();
-        Log.i("DB LOADED","done");
-        FoodDAO f = db.foodDao();
-        ArrayList<Food> foods = (ArrayList<Food>) f.getAll();
-        try {
-        Log.i("test",foods.get(0).getName());
-        }
-        catch (Exception e){
-            Log.i("failed","loading failed");
-            if ( foods.isEmpty() ){
-                Log.i("failed","empty");
-            }
-        }
+
 
 
         setViewPagerAdapter();
@@ -66,12 +59,7 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
         viewPager2.setAdapter(viewPager2Adapter);
     }
 
-    public AppDatabase initDB(){
-        return Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "Data").allowMainThreadQueries()
-                .createFromAsset("databases/aa.db")
-                .build();
-    }
+
 
     @Override
     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
