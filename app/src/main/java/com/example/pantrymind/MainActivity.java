@@ -6,12 +6,18 @@ import androidx.fragment.app.Fragment;
 import androidx.room.Room;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.example.pantrymind.model.DAO.FoodDAO;
 import com.example.pantrymind.model.db.AppDatabase;
 import com.example.pantrymind.model.entity.Food;
+import com.example.pantrymind.model.notif.Notification;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -33,9 +39,23 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
         AppDatabase db = AppDatabase.getDbInstance(getApplicationContext());
         Log.i("DB LOADED","done");
 
+        //NOTIFICATION CHANNEL
+                CharSequence name = "reminder";
+                String description = "lets not describe this now";
+                int importance = NotificationManager.IMPORTANCE_DEFAULT;
+                NotificationChannel channel = new NotificationChannel("PM", name, importance);
+                channel.setDescription(description);
+                channel.setLightColor(Color.GREEN);
+                NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.createNotificationChannel(channel);
+        Notification.buildNotif(getApplicationContext(),"pensez a acheter du lait");
+        Notification.buildNotif(getApplicationContext(),"beep beep");
+
+
         setContentView(R.layout.activity_main);
         viewPager2 = findViewById(R.id.viewPagerMain);
         tabLayout = findViewById(R.id.tabLayoutMain);
+
 
 
 
