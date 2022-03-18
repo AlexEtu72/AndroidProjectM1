@@ -1,5 +1,6 @@
 package com.example.pantrymind;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -53,6 +54,8 @@ public class ScanFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        enableCamera();
+
     }
 
     @Override
@@ -60,5 +63,9 @@ public class ScanFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_scan, container, false);
+    }
+    private void enableCamera() {
+        Intent intent = new Intent(getContext(), CameraActivity.class);
+        startActivity(intent);
     }
 }
