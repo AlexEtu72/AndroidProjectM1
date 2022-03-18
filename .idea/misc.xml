@@ -12,6 +12,12 @@
         <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/drawable/pantrymind_icon_background.xml" value="0.185" />
         <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/drawable/pantrymind_icon_foreground.xml" value="0.185" />
         <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/fragment_alert.xml" value="0.25" />
+        <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/fragment_collection_object.xml" value="0.1838392475416845" />
+        <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/fragment_lists.xml" value="0.1838392475416845" />
+        <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/fragment_profil.xml" value="0.33" />
+        <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/fragment_scan.xml" value="0.1838392475416845" />
+        <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/fragment_stock.xml" value="0.15305686190679776" />
         <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/inventory_layout.xml" value="0.16" />
         <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/profil_layout.xml" value="0.15256410256410258" />
         <entry key="..\:/Users/Alexandre/AndroidStudioProjects/TP1/app/src/main/res/layout/reminder_layout.xml" value="0.15256410256410258" />

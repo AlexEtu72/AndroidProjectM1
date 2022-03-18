@@ -10,4 +10,8 @@
     <string name="scan">Scan</string>
     <string name="alert">Alert</string>
     <string name="profile">Profile</string>
+    <string name="my_loyalty_card">My loyalty card</string>
+    <string name="edit_my_profile">Edit my profile</string>
+    <string name="my_profile">My Profile</string>
+    <string name="tom_tom">Tom Tom</string>
 </resources>

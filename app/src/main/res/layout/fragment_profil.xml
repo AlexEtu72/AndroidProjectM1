@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfilFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <Button
-        android:id="@+id/button4"
+    <ImageView
+        android:id="@+id/profilPic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/mstom" />
 
+    <TextView
+        android:id="@+id/profilName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="50dp"
+        android:textSize="30dp"
+        android:text="@string/tom_tom" />
+
+    <Button
+        android:id="@+id/myLoyaltyCardButton"
+        android:layout_width="303dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="400dp"
+        android:text="@string/my_loyalty_card"
+        app:icon="@android:drawable/stat_notify_more" />
+
+    <Button
+        android:id="@+id/editProfilButton"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="450dp"
+        android:text="@string/edit_my_profile"
+        app:icon="@drawable/ic_baseline_account_box_24" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="@string/my_profile" />
 </FrameLayout>
