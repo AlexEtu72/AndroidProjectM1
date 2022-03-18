@@ -14,4 +14,7 @@
     <string name="edit_my_profile">Edit my profile</string>
     <string name="my_profile">My Profile</string>
     <string name="tom_tom">Tom Tom</string>
+    <string name="my_lists">My lists</string>
+    <string name="my_inventory">My inventory</string>
+    <string name="my_reminders">My reminders</string>
 </resources>
