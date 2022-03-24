@@ -64,6 +64,7 @@ public class ScanFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_scan, container, false);
     }
+
     private void enableCamera() {
         Intent intent = new Intent(getContext(), CameraActivity.class);
         startActivity(intent);
