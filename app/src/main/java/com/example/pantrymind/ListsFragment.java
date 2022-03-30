@@ -15,6 +15,10 @@ import com.example.pantrymind.model.DAO.ShoppingListDAO;
 import com.example.pantrymind.model.db.AppDatabase;
 import com.example.pantrymind.model.entity.ShoppingList;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ListsFragment#newInstance} factory method to
@@ -67,23 +71,44 @@ public class ListsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lists, container, false);
 
-        ListView lv =(ListView) view.findViewById(R.id.SLLV);
+        //AppDatabase db = AppDatabase.getDbInstance(getContext());
+        //ShoppingListDAO dao = db.shoppingListDAO();
+        //ShoppingList[] x = dao.getAll().toArray(new ShoppingList[0]);
 
+        List<Item> image_details = getListData();
+
+        ListView lv =(ListView) view.findViewById(R.id.SLLV);
+        lv.setAdapter(new CustomListAdapter(getActivity(), image_details));
+
+
+
+
+        //ArrayAdapter<ShoppingList> LVA = new ArrayAdapter<ShoppingList>(
+          //      getActivity(),
+            //    android.R.layout.simple_list_item_1,
+             //   image_details
+               // );
+
+        //lv.setAdapter(LVA);
+
+        // Inflate the layout for this fragment
+        return view;
+    }
+
+
+    private  List<Item> getListData() {
 
         AppDatabase db = AppDatabase.getDbInstance(getContext());
         ShoppingListDAO dao = db.shoppingListDAO();
         ShoppingList[] x = dao.getAll().toArray(new ShoppingList[0]);
 
-        ArrayAdapter<ShoppingList> LVA = new ArrayAdapter<ShoppingList>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                x
-                );
+        List<Item> list = new ArrayList<Item>();
 
-        lv.setAdapter(LVA);
+        for(int i = 0;i<x.length;i++){
+            list.add(new Item(x[i].getName(),x[i].getName().toLowerCase(Locale.ROOT) ,x[i].getDescription()));
+        }
 
-        // Inflate the layout for this fragment
-        return view;
+        return list;
     }
 
     @Override
