@@ -17,6 +17,8 @@
         android:theme="@style/Theme.TP1">
         <activity android:name="com.example.pantrymind.CameraActivity" android:parentActivityName=".MainActivity">
             </activity>
+        <activity android:name="com.example.pantrymind.ShoppingListDisplayActivity" android:parentActivityName=".MainActivity">
+        </activity>
         <activity
             android:name="com.example.pantrymind.MainActivity"
             android:exported="true">

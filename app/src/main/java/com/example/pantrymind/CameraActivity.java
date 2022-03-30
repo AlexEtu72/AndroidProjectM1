@@ -75,8 +75,13 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        if ((ActivityCompat.checkSelfPermission(CameraActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)){
+        cameraSource.stop();
         NavUtils.navigateUpFromSameTask(this);
+        }
     }
+
+
 
     private void initialiseDetectorsAndSources() {
 

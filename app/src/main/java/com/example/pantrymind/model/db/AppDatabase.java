@@ -12,6 +12,7 @@ import com.example.pantrymind.model.DAO.ShoppingList_ProductDAO;
 import com.example.pantrymind.model.entity.Articles;
 import com.example.pantrymind.model.entity.Articles_Barcodes;
 import com.example.pantrymind.model.entity.Food;
+import com.example.pantrymind.model.entity.Product;
 import com.example.pantrymind.model.entity.Reminder;
 import com.example.pantrymind.model.entity.ShoppingList;
 import com.example.pantrymind.model.entity.ShoppingList_Product;

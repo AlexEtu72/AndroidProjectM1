@@ -2,6 +2,7 @@ package com.example.pantrymind.model.entity;
 
 import java.time.LocalDate;
 
+
 public abstract class Product {
 
     private int id;

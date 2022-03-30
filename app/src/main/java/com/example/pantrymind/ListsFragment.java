@@ -1,5 +1,7 @@
 package com.example.pantrymind;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -66,6 +69,8 @@ public class ListsFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,6 +84,19 @@ public class ListsFragment extends Fragment {
 
         ListView lv =(ListView) view.findViewById(R.id.SLLV);
         lv.setAdapter(new CustomListAdapter(getActivity(), image_details));
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id){
+                    Log.i("tes", String.valueOf(position));
+                    // Create new instance of fragment and add it to
+                    // the activity using a fragment transaction.
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context,
+                            ShoppingListDisplayActivity.class);
+                    intent.putExtra("selectedItemPosition",image_details.get(position).getitemName());
+                    context.startActivity(intent);
+                };});
 
 
 
@@ -111,9 +129,5 @@ public class ListsFragment extends Fragment {
         return list;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.i("back to the task","back");
-    }
+
 }
