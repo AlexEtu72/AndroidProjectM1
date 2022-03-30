@@ -18,16 +18,17 @@
         app:backgroundTint="@color/purple_main"
         android:src="@drawable/ic_baseline_add_24" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:text="@string/my_lists" />
+
+    <ListView
+        android:id="@+id/SLLV"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="100dp"/>
 
 </FrameLayout>

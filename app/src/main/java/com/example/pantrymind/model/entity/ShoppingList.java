@@ -1,5 +1,6 @@
 package com.example.pantrymind.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.*;
 
 @Entity
@@ -40,5 +41,11 @@ public class ShoppingList {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @NonNull
+    @Override
+    public String toString(){
+        return name;
     }
 }
