@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/pantrymind_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TP1">
-        <activity android:name="com.example.pantrymind.CameraActivity"/>
+        <activity android:name="com.example.pantrymind.CameraActivity" android:parentActivityName=".MainActivity">
+            </activity>
         <activity
             android:name="com.example.pantrymind.MainActivity"
             android:exported="true">

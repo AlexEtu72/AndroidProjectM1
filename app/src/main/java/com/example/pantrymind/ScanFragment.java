@@ -3,6 +3,7 @@ package com.example.pantrymind;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.core.app.NavUtils;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -74,9 +75,8 @@ public class ScanFragment extends Fragment {
     boolean first=false;
     private void enableCamera() {
         Intent intent = new Intent(getContext(), CameraActivity.class);
-        if(!first){
             startActivity(intent);
-            first=true;
-        }
     }
+
+
 }
