@@ -1,5 +1,6 @@
 package com.example.pantrymind.model.DAO;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -23,4 +24,7 @@ public interface ArticlesDAO {
 
     @Query("SELECT * FROM articles")
     List<Articles> getAll();
+
+    @Query("SELECT * from articles WHERE id = (:id)")
+    public Articles getArticleByID(int id);
 }

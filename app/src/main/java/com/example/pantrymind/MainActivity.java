@@ -14,8 +14,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.pantrymind.model.DAO.ArticlesDAO;
 import com.example.pantrymind.model.DAO.FoodDAO;
 import com.example.pantrymind.model.db.AppDatabase;
+import com.example.pantrymind.model.entity.Articles;
 import com.example.pantrymind.model.entity.Food;
 import com.example.pantrymind.model.notif.Notification;
 import com.google.android.material.tabs.TabLayout;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
         //DB INIT
         AppDatabase db = AppDatabase.getDbInstance(getApplicationContext());
         Log.i("DB LOADED","done");
+        ArticlesDAO dao = db.articlesDAO();
 
         //NOTIFICATION CHANNEL
                 CharSequence name = "reminder";

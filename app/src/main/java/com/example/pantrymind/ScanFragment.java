@@ -54,7 +54,7 @@ public class ScanFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        enableCamera();
+
 
     }
 
@@ -65,8 +65,18 @@ public class ScanFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_scan, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        enableCamera();
+    }
+
+    boolean first=false;
     private void enableCamera() {
         Intent intent = new Intent(getContext(), CameraActivity.class);
-        startActivity(intent);
+        if(!first){
+            startActivity(intent);
+            first=true;
+        }
     }
 }
