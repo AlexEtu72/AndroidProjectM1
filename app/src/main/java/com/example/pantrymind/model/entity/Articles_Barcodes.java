@@ -24,11 +24,12 @@ public class Articles_Barcodes {
 
 
 
+    @NonNull
     public String getBarcode() {
         return barcode;
     }
 
-    public void setBarcode(String barcode) {
+    public void setBarcode(@NonNull String barcode) {
         this.barcode = barcode;
     }
 

@@ -1,6 +1,7 @@
 package com.example.pantrymind.model.entity;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.*;
 import java.time.LocalDate;
 
@@ -31,5 +32,11 @@ public class Food extends Product{
 
     public void setCalories(int calories){
         this.calories=calories;
+    }
+
+    @NonNull
+    @Override
+    public String toString(){
+        return this.getName();
     }
 }

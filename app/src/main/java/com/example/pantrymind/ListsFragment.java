@@ -88,13 +88,10 @@ public class ListsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id){
-                    Log.i("tes", String.valueOf(position));
-                    // Create new instance of fragment and add it to
-                    // the activity using a fragment transaction.
                     Context context = view.getContext();
                     Intent intent = new Intent(context,
                             ShoppingListDisplayActivity.class);
-                    intent.putExtra("selectedItemPosition",image_details.get(position).getitemName());
+                    intent.putExtra("selectedItemPosition",position+1 );
                     context.startActivity(intent);
                 };});
 

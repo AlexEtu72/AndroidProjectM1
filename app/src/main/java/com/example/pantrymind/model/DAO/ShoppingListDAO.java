@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.pantrymind.model.entity.Articles_Barcodes;
 import com.example.pantrymind.model.entity.ShoppingList;
 
 import java.util.List;
@@ -24,4 +25,7 @@ public interface ShoppingListDAO {
 
     @Query("SELECT * FROM shoppinglist")
     List<ShoppingList> getAll();
+
+    @Query("SELECT * from shoppinglist WHERE id like (:id)")
+    public ShoppingList getSLbyId(int id);
 }

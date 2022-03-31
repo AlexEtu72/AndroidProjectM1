@@ -22,6 +22,7 @@ import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.util.Rational;
 import android.util.Size;
 import android.util.SparseArray;
@@ -34,6 +35,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pantrymind.model.DAO.ArticlesDAO;
+import com.example.pantrymind.model.DAO.Articles_BarcodesDAO;
+import com.example.pantrymind.model.db.AppDatabase;
+import com.example.pantrymind.model.entity.Articles;
+import com.example.pantrymind.model.entity.Articles_Barcodes;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -76,8 +82,8 @@ public class CameraActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if ((ActivityCompat.checkSelfPermission(CameraActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)){
-        cameraSource.stop();
-        NavUtils.navigateUpFromSameTask(this);
+            cameraSource.stop();
+            NavUtils.navigateUpFromSameTask(this);
         }
     }
 
@@ -85,15 +91,16 @@ public class CameraActivity extends AppCompatActivity {
 
     private void initialiseDetectorsAndSources() {
 
-        //Toast.makeText(getApplicationContext(), "Barcode scanner started", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Barcode scanner started", Toast.LENGTH_SHORT).show();
 
         barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.ALL_FORMATS)
                 .build();
 
         cameraSource = new CameraSource.Builder(this, barcodeDetector)
-                .setRequestedPreviewSize(1920, 1080)
+                .setRequestedPreviewSize(1080, 1080)
                 .setAutoFocusEnabled(true) //you should add this feature
+                .setFacing(0)
                 .build();
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
@@ -135,6 +142,8 @@ public class CameraActivity extends AppCompatActivity {
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> barcodes = detections.getDetectedItems();
                 if (barcodes.size() != 0) {
+                    Log.i("test",barcodes.valueAt(0).rawValue);
+                    displayName(barcodes.valueAt(0).rawValue);
 
 
                     barcodeText.post(new Runnable() {
@@ -145,12 +154,12 @@ public class CameraActivity extends AppCompatActivity {
                             if (barcodes.valueAt(0).email != null) {
                                 barcodeText.removeCallbacks(null);
                                 barcodeData = barcodes.valueAt(0).email.address;
-                                barcodeText.setText(barcodeData);
+                                //barcodeText.setText(barcodeData);
+
                                 toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                             } else {
-
                                 barcodeData = barcodes.valueAt(0).displayValue;
-                                barcodeText.setText(barcodeData);
+                               // barcodeText.setText(barcodeData);
                                 toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
 
                             }
@@ -160,6 +169,16 @@ public class CameraActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    void displayName(String barcodeData){
+        AppDatabase db = AppDatabase.getDbInstance(getApplicationContext());
+        Articles_BarcodesDAO dao1 = db.articles_barcodesDAO();
+        Articles_Barcodes barcode1 = dao1.getArticleBarcodeByBarcode(barcodeData);
+        Log.i("aaaa",barcode1.getPId());
+        ArticlesDAO dao2 =db.articlesDAO();
+        Articles a= dao2.getArticleByID(Integer.parseInt(barcode1.getPId()));
+        barcodeText.setText(a.getProductName());
     }
 
 

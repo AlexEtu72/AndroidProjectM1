@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.pantrymind.model.entity.Articles;
 import com.example.pantrymind.model.entity.Articles_Barcodes;
 
 import java.util.List;
@@ -23,4 +24,9 @@ public interface Articles_BarcodesDAO {
 
     @Query("SELECT * FROM articles_barcodes")
     List<Articles_Barcodes> getAll();
+
+    @Query("SELECT * from articles_barcodes WHERE barcode like (:barcode)")
+    public Articles_Barcodes getArticleBarcodeByBarcode(String barcode);
+
+
 }
